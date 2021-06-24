@@ -1,1 +1,4 @@
-<p>Say: {{sayMir}}</p>
+<p>Say: {{sayMir | uppercase}}</p>
+<p>It costs {{price | currency:'BRL'}}</p>
+
+<input id="name" [(ngModel)]="sayMir" placeholder="name">

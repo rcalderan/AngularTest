@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MirrrComponent implements OnInit {
 
-  sayMir = "MIIIRRRRRR!!!!"
+  sayMir = "mirrr!!!!"
+  price = 15.5
   constructor() { }
 
   ngOnInit(): void {
