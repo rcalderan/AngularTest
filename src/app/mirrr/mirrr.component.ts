@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 
 @Component({
   selector: 'app-mirrr',
@@ -6,13 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mirrr.component.css']
 })
 export class MirrrComponent implements OnInit {
-
+  
+  @Input() str?:string;
   sayMir = "mirrr!!!!"
   price = 15.5
   constructor() { }
 
   ngOnInit(): void {
-    alert("Mirr Init!!")
   }
 
 }
