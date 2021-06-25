@@ -11,15 +11,17 @@ export class PersonComponent implements OnInit {
   
   all = DataPerson;
 
-  person : Person = {
-    id:1,
-    name:'Ting Ling',
-    height: 1111.58
-  }
+  selectedPerson?: Person;
+  
 
   constructor() { }
 
+  //calls when component loaded
   ngOnInit(): void {
+  }
+  //to be called on click
+  onSelect(person: Person): void {
+    this.selectedPerson = person;
   }
 
 }

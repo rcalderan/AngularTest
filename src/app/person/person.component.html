@@ -1,6 +1,19 @@
 <h2>People</h2>
 <ul class="persons">
-    <li *ngFor="let p of all">
+    <li *ngFor="let p of all"    
+    [class.selected]="p === selectedPerson"
+    (click)="onSelect(p)">
     <span class="badge">{{p.id}}</span> {{p.name}} has {{p.height | number:'1.2'}}m
   </li>
 </ul>
+
+<div *ngIf="selectedPerson">
+
+  <h2>{{selectedPerson.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{selectedPerson.id}}</div>
+  <div>
+    <label for="person-name">Person name: </label>
+    <input id="person-name" [(ngModel)]="selectedPerson.name" placeholder="name">
+  </div>
+
+</div>
