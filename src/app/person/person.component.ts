@@ -29,7 +29,7 @@ export class PersonComponent implements OnInit {
   //get all person in database by Service created by ng generate PeopleService
 
   getPerson():void{
-    this.all = this.personService.All();
+    this.personService.All().subscribe(all => this.all = all)
   }
 
 }
