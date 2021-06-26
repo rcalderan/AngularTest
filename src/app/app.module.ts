@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { MirrrComponent } from './mirrr/mirrr.component';
 import { PersonComponent } from './person/person.component';
 import { PersonDetailsComponent } from './person-details/person-details.component';
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MirrrComponent,
     PersonComponent,
-    PersonDetailsComponent
+    PersonDetailsComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
