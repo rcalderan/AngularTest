@@ -13,11 +13,12 @@ import { MessageService } from './message.service';
 export class PersonService {
 
   constructor(private messageService:MessageService) { 
-    
+
   }
 
   All(): Observable<Person[]>{
-    const persons=of(DataPerson)
+    const persons=of(DataPerson)    
+    this.messageService.add('PersonService: fetched all persons');
     return persons;
   }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Person} from './person'
 import { PersonService } from '../person.service';
+import { MessageService } from '../message.service';
 
 @Component({
   selector: 'app-person',
@@ -14,7 +15,7 @@ export class PersonComponent implements OnInit {
   selectedPerson?: Person;
   
   //To Inject service, must declare a private a service attribute  to constructor of the required class
-  constructor(private personService:PersonService) {
+  constructor(private personService:PersonService, private messageService : MessageService) {
 
    }
 
@@ -24,10 +25,10 @@ export class PersonComponent implements OnInit {
   //to be called on click
   onSelect(person: Person): void {
     this.selectedPerson = person;
+    this.messageService.add(`Person Component: Selected person ${person.id}`)
   }
 
   //get all person in database by Service created by ng generate PeopleService
-
   getPerson():void{
     this.personService.All().subscribe(all => this.all = all)
   }
