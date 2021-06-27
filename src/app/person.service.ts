@@ -17,7 +17,7 @@ export class PersonService {
   }
 
   All(): Observable<Person[]>{
-    const persons=of(DataPerson)    
+    const persons=of(DataPerson) 
     this.messageService.add('PersonService: fetched all persons');
     return persons;
   }

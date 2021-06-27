@@ -21,6 +21,7 @@ export class PersonComponent implements OnInit {
 
   //calls when component loaded
   ngOnInit(): void {
+    this.getPerson()
   }
   //to be called on click
   onSelect(person: Person): void {
