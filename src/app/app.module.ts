@@ -8,6 +8,7 @@ import { MirrrComponent } from './mirrr/mirrr.component';
 import { PersonComponent } from './person/person.component';
 import { PersonDetailsComponent } from './person-details/person-details.component';
 import { MessagesComponent } from './messages/messages.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { MessagesComponent } from './messages/messages.component';
     MirrrComponent,
     PersonComponent,
     PersonDetailsComponent,
-    MessagesComponent
+    MessagesComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
