@@ -21,4 +21,11 @@ export class PersonService {
     this.messageService.add('PersonService: fetched all persons');
     return persons;
   }
+
+  
+  getPerson(id:number): Observable<Person>{
+    const person= DataPerson.find(p=>p.id===id)!
+    this.messageService.add(`PersonService: got person ${person.id}`);
+    return of(person);
+  }
 }

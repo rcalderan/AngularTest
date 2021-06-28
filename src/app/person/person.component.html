@@ -1,4 +1,14 @@
 <h2>People</h2>
+
+<ul class="persons">
+  <li *ngFor="let p of all">
+    <a routerLink="/datail/{{p.id}}">
+      <span class="badge">{{p.id}}</span> {{p.name}} has {{p.height | number:'1.2'}}m
+    </a>
+  </li>
+</ul>
+
+<!-- just dont lose this
 <ul class="persons">
     <li *ngFor="let p of all"    
     [class.selected]="p === selectedPerson"
@@ -6,5 +16,4 @@
     <span class="badge">{{p.id}}</span> {{p.name}} has {{p.height | number:'1.2'}}m
   </li>
 </ul>
-
-<app-person-details [person]="selectedPerson"></app-person-details>
+-->

@@ -14,11 +14,11 @@ export class DashboardComponent implements OnInit {
   constructor(private personService:PersonService) { }
 
   ngOnInit(): void {
-    
+    this.getPersons()
   }
 
   getPersons(): void{
-    this.personService.All().subscribe(p => this.persons = p.slice(1,5))
+    this.personService.All().subscribe(p => this.persons = p.slice(0,5))
   }
 
 }

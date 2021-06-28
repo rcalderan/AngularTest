@@ -11,8 +11,9 @@ import { MessageService } from '../message.service';
 export class PersonComponent implements OnInit {
   //all prsons
   all:Person[] = [];
-
-  selectedPerson?: Person;
+  
+  //when added route, this no longer used
+  //selectedPerson?: Person;
   
   //To Inject service, must declare a private a service attribute  to constructor of the required class
   constructor(private personService:PersonService, private messageService : MessageService) {
@@ -21,13 +22,15 @@ export class PersonComponent implements OnInit {
 
   //calls when component loaded
   ngOnInit(): void {
+    alert('Persons loaded')
     this.getPerson()
   }
-  //to be called on click
+  //to be called on click: when added route, this no longer used
+  /*
   onSelect(person: Person): void {
     this.selectedPerson = person;
     this.messageService.add(`Person Component: Selected person ${person.id}`)
-  }
+  }*/
 
   //get all person in database by Service created by ng generate PeopleService
   getPerson():void{
