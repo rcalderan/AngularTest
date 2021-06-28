@@ -22,7 +22,7 @@ export class PersonComponent implements OnInit {
 
   //calls when component loaded
   ngOnInit(): void {
-    alert('Persons loaded')
+    //alert('Persons loaded')
     this.getPerson()
   }
   //to be called on click: when added route, this no longer used
