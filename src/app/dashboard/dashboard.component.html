@@ -1,7 +1,7 @@
 <h2>Top people</h2>
 <div class="person-menu">
-  <a *ngFor="let p of persons"
-  routerLink="/detail/{{p.id}}">
+  <a *ngFor="let p of persons; let i = index" [attr.data-index]="i" 
+  routerLink="/detail/{{i}}">
     {{p.name}}
   </a>
 </div>

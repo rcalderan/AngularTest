@@ -2,8 +2,8 @@
 
 <ul class="persons">
   <li *ngFor="let p of all">
-    <a routerLink="/detail/{{p.id}}">
-      <span class="badge">{{p.id}}</span> {{p.name}} has {{p.height | number:'1.2'}}m
+    <a routerLink="/detail/{{p.name}}">
+      <span class="badge"></span> {{p.name}} has {{p.height | number:'1.2'}}m
     </a>
   </li>
 </ul>

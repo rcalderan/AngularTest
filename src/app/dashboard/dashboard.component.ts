@@ -18,7 +18,14 @@ export class DashboardComponent implements OnInit {
   }
 
   getPersons(): void{
-    this.personService.All().subscribe(p => this.persons = p.slice(0,5))
+    this.personService.All().subscribe(p => {
+
+      alert(JSON.stringify(p))
+      //this.persons = p.slice(0,5)
+    },(error)=>{
+      alert(error)
+    }
+    )
   }
 
 }
