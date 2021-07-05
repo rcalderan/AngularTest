@@ -18,9 +18,11 @@ export class DashboardComponent implements OnInit {
   }
 
   getPersons(): void{
-    this.personService.All().subscribe(p => {
-
-      alert(JSON.stringify(p))
+    this.personService.All().subscribe(swapiResponse => {
+      this.persons = swapiResponse.results
+      for (let index = 1; index <= this.persons.length; index++) {
+        this.persons[index-1].id =index
+      }
       //this.persons = p.slice(0,5)
     },(error)=>{
       alert(error)

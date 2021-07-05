@@ -37,7 +37,13 @@ export class PersonDetailsComponent implements OnInit {
   getPerson(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.personService.getPerson(id)
-      .subscribe(p => this.person = p);
+      .subscribe(response => {
+        alert(JSON.stringify(response))
+        if( response){
+          this.person =response.results[0]
+          this.person.id = id+1 //necessary workarround, cose swapi doenst return id...
+        }else this.person=undefined
+      });
   }
   goBack():void{
     this.loc.back();

@@ -34,7 +34,12 @@ export class PersonComponent implements OnInit {
 
   //get all person in database by Service created by ng generate PeopleService
   getPerson():void{
-    this.personService.All().subscribe(all => this.all = all)
+    this.personService.All().subscribe(all => {
+      this.all = all.results
+      for (let index = 0; index < this.all.length; index++) {
+        this.all[index].id =index+1
+      }
+    })
   }
 
 }
