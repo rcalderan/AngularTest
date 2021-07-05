@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-
+import {Person} from './person/person'
 import { PersonResponse } from './person/person-response';
 import { DataPerson } from './person/mock-person';
 //observable from RxJS library
@@ -51,10 +51,10 @@ export class PersonService {
   }
 
 
-  getPerson(id: number): Observable<PersonResponse> {
-    return this.http.get<PersonResponse>(`${this.swapiURL}/people/${id}/`).pipe(
+  getPerson(id: number): Observable<Person> {
+    return this.http.get<Person>(`${this.swapiURL}/people/${id}/`).pipe(
       tap(_ => this.log(`fetched aaaaaaaaaaaaaperson id=${id}`)),
-      catchError(this.handleError<PersonResponse>(`getPerson id=${id}`))
+      catchError(this.handleError<Person>(`getPerson id=${id}`))
     );
     /* was
     //const person = DataPerson.find(p => p.id === id)!
